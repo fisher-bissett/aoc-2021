@@ -12,9 +12,9 @@ const puzzleOne = (): number => {
   let depth: number = 0;
   for (let i = 0; i < directions.length; i++) {
     let currentValue = Number(directions[i].charAt(directions[i].length - 1));
-    if (directions[i].includes('down')) depth = depth + currentValue;
-    if (directions[i].includes('up')) depth = depth - currentValue;
-    if (directions[i].includes('forward')) position = position + currentValue;
+    if (directions[i].includes('down')) depth += currentValue;
+    if (directions[i].includes('up')) depth -= currentValue;
+    if (directions[i].includes('forward')) position += currentValue;
   }
   return position * depth;
 };
@@ -27,10 +27,10 @@ const puzzleTwo = (): number => {
   let aim: number = 0;
   for (let i = 0; i < directions.length; i++) {
     let currentValue = Number(directions[i].charAt(directions[i].length - 1));
-    if (directions[i].includes('down')) aim = aim + currentValue;
-    if (directions[i].includes('up')) aim = aim - currentValue;
+    if (directions[i].includes('down')) aim += currentValue;
+    if (directions[i].includes('up')) aim -= currentValue;
     if (directions[i].includes('forward')) {
-      position = position + currentValue;
+      position += currentValue;
       depth = depth + aim * currentValue;
     }
   }
