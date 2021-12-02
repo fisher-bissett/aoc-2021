@@ -8,7 +8,7 @@ const seaLevels: number[] = readFileSync(__dirname + '/day1.input.txt')
 // ----------------------puzzle one----------------------------
 //
 const puzzleOne = (): number => {
-  let count = 0;
+  let count: number = 0;
   for (let i = 1; i < seaLevels.length; i++) {
     if (seaLevels[i] > seaLevels[i - 1]) {
       count++;
@@ -21,7 +21,7 @@ const puzzleOne = (): number => {
 // ----------------------puzzle two----------------------------
 //
 const puzzleTwo = (): number => {
-  let count = 0;
+  let count: number = 0;
   const groupedArray = createGroupings(seaLevels);
   for (let i = 1; i < groupedArray.length; i++) {
     if (groupedArray[i] > groupedArray[i - 1]) {
