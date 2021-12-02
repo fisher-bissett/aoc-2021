@@ -7,9 +7,9 @@ const directions: string[] = readFileSync(__dirname + '/day2.input.txt')
 //
 // ----------------------puzzle one----------------------------
 //
-const puzzleOne = () => {
-  let position = 0;
-  let depth = 0;
+const puzzleOne = (): number => {
+  let position: number = 0;
+  let depth: number = 0;
   for (let i = 0; i < directions.length; i++) {
     let currentValue = Number(directions[i].charAt(directions[i].length - 1));
     if (directions[i].includes('down')) depth = depth + currentValue;
@@ -21,10 +21,10 @@ const puzzleOne = () => {
 //
 // ----------------------puzzle two----------------------------
 //
-const puzzleTwo = () => {
-  let position = 0;
-  let depth = 0;
-  let aim = 0;
+const puzzleTwo = (): number => {
+  let position: number = 0;
+  let depth: number = 0;
+  let aim: number = 0;
   for (let i = 0; i < directions.length; i++) {
     let currentValue = Number(directions[i].charAt(directions[i].length - 1));
     if (directions[i].includes('down')) aim = aim + currentValue;
